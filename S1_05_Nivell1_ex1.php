@@ -21,13 +21,13 @@ abstract class Animal{
 class Gos extends Animal{
 
     public function soAnimal(){
-        echo "Guau, Guau";
+        return "Guau, Guau";
     }
 }
 
 class Gat extends Animal{
     public function soAnimal(){
-        echo "Miau, Miau";
+        return "Miau, Miau";
     }
 }
 
