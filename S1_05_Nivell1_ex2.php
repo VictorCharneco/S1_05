@@ -14,7 +14,7 @@ abstract class Shape{
     }
 
     public function getAltura(){
-        return "Altura: $this->altura";
+        return "Altura: $this->alt";
     }
 
     public function setAmple(int $ample){
