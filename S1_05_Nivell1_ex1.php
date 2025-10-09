@@ -1,6 +1,6 @@
 <?php
 abstract class Animal{
-    protected $tipusAnimal;
+    protected string $tipusAnimal;
 
     public function __construct(string $tipusAnimal){
         $this->tipusAnimal = $tipusAnimal;

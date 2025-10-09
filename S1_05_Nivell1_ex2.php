@@ -1,8 +1,8 @@
 <?php
 
 abstract class Shape{
-    protected $ample;
-    protected $alt;
+    protected int $ample;
+    protected int $alt;
 
     public function __construct(int $ample, int $alt){
         $this->ample = $ample;
