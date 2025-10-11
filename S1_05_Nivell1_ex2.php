@@ -1,5 +1,7 @@
 <?php
-
+interface CalculsPoligon{
+    public function calculArea():string;
+}
 abstract class Shape{
     protected int $ample;
     protected int $alt;
@@ -9,46 +11,46 @@ abstract class Shape{
         $this->alt = $alt;
     }
 
-    public function getAmple(){
+    public function getAmple(): string{
         return "Ample: $this->ample";
     }
 
-    public function getAltura(){
+    public function getAltura(): string{
         return "Altura: $this->alt";
     }
 
-    public function setAmple(int $ample){
+    public function setAmple(int $ample): void{
         $this->ample = $ample;
     }
 
-    public function setAlt(int $alt){
+    public function setAlt(int $alt): void{
         $this->alt = $alt;
     }
 
-    abstract public function calculArea();
+    abstract public function calculArea(): string;
 
 }
 
-class Triangle extends Shape{
+class Triangle extends Shape implements CalculsPoligon{
 
-     public function calculArea(){
+     public function calculArea(): string{
          $areaTriangle = ($this->ample * $this->alt) / 2;
-         echo "L'àrea del triangle és de: $areaTriangle";
+         return "L'àrea del triangle és de: $areaTriangle";
      }
 }
 
-class Rectangle extends Shape{
+class Rectangle extends Shape implements CalculsPoligon{
 
-     public function calculArea(){
+     public function calculArea(): string{
          $areaRectangle = $this->ample * $this->alt;
-         echo "L'àrea del rectangle és de: $areaRectangle";
+         return "L'àrea del rectangle és de: $areaRectangle";
      }
 }
 
 $triangle1 = new Triangle(4, 8);
-$triangle1->calculArea(); 
+echo $triangle1->calculArea(); 
 echo "\n";
 $rectangle1 = new Rectangle(8, 18);
-$rectangle1->calculArea();
+echo $rectangle1->calculArea();
 
 ?>

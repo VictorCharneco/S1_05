@@ -1,4 +1,8 @@
 <?php
+
+interface AnimalInterficie{
+    public function soAnimal(): string;
+}
 abstract class Animal{
     protected string $tipusAnimal;
 
@@ -6,27 +10,27 @@ abstract class Animal{
         $this->tipusAnimal = $tipusAnimal;
     }
 
-    public function getTipusAnimal(){
+    public function getTipusAnimal() : string{
         return $this->tipusAnimal;
     }
 
-    public function setTipusAnimal(string $tipusAnimal){
+    public function setTipusAnimal(string $tipusAnimal): void{
         $this->tipusAnimal = $tipusAnimal;
     }
 
-    abstract public function soAnimal();
+    abstract public function soAnimal() :string;
 
 }
 
-class Gos extends Animal{
+class Gos extends Animal implements AnimalInterficie{
 
-    public function soAnimal(){
+    public function soAnimal(): string{
         return "Guau, Guau";
     }
 }
 
-class Gat extends Animal{
-    public function soAnimal(){
+class Gat extends Animal implements AnimalInterficie{
+    public function soAnimal(): string{
         return "Miau, Miau";
     }
 }
